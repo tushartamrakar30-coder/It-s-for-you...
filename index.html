@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width,
-                   initial-scale=1.0,
-                   maximum-scale=1.0,
-                   user-scalable=no">
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <meta name="theme-color" content="#e85b86">
 
@@ -18,8 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -28,102 +26,58 @@
 
 <body>
 
-    <!-- =====================================================
-         BACKGROUND
-    ====================================================== -->
+    <!-- ================================
+         BACKGROUND EFFECTS
+    ================================= -->
 
     <div id="backgroundHearts"></div>
-
     <div id="particles"></div>
+    <div id="heartExplosion"></div>
 
 
-
-    <!-- =====================================================
+    <!-- ================================
          MAIN WEBSITE
-    ====================================================== -->
+    ================================= -->
 
     <main id="mainContent">
 
 
-        <!-- =================================================
-             SCREEN 1
-             FIRST QUESTION
-        ================================================== -->
+        <!-- =================================
+             SCREEN 1 — BEGINNING
+        ================================== -->
 
-        <section class="screen active" id="screen1">
+        <section class="screen screen1 active" id="screen1">
 
-            <div class="top-label">
-                A LITTLE SOMETHING FROM MY HEART
-            </div>
+            <div class="glass-card">
 
+                <div class="small-tag">
+                    A little something for you ❤️
+                </div>
 
-            <div class="main-heart">
-                ♥
-            </div>
+                <h1>
+                    Hey, <span class="name-highlight">Shital</span>...
+                </h1>
 
-
-            <!-- GIRL'S NAME
-                 CHANGE "Shital" HERE
-            -->
-
-            <h1 class="name-title">
-                Shital,
-            </h1>
-
-
-            <div class="script typing-text"
-                 id="introTyping">
-
-                <!-- Javascript will type text here -->
-
-            </div>
-
-
-            <div class="beautiful-quote">
-
-                <p>
-                    I love you without knowing your name.
-                </p>
-
-                <p>
-                    I love you without seeing you.
-                </p>
-
-                <strong>
-                    Somehow, my heart still found you.
-                </strong>
-
-            </div>
-
-
-            <div class="question-box">
-
-                <p class="question-small">
+                <p class="subtitle">
                     Before anything else...
                 </p>
 
-                <h2 class="script">
-                    Can I tell you something
-                    from my heart?
-                </h2>
+                <div class="typing" id="introTyping">
+                    Can I tell you something from my heart?
+                </div>
 
+                <div class="quote">
+                    "Sometimes the heart knows what the mind
+                    takes time to understand."
+                </div>
 
-                <div class="choice-buttons">
+                <div class="button-row">
 
-                    <!-- BOTH BUTTONS START SONG 1 -->
-
-                    <button
-                        class="choice-btn dark-btn"
-                        id="firstYes">
-
-                        Yes, I'm listening ♥
+                    <button class="love-btn" id="firstYes">
+                        Yes, I'm listening ❤️
                     </button>
 
-
-                    <button
-                        class="choice-btn light-btn"
-                        id="firstYes2">
-
+                    <button class="love-btn secondary-btn" id="firstYes2">
                         Yes, tell me ♡
                     </button>
 
@@ -131,839 +85,427 @@
 
             </div>
 
+        </section>
 
-            <p class="little-hint">
-                Just tap one... something beautiful is waiting.
-            </p>
+
+        <!-- =================================
+             SCREEN 2 — FIRST SONG
+        ================================== -->
+
+        <section class="screen screen2" id="screen2">
+
+            <div class="glass-card music-card">
+
+                <div class="small-tag">
+                    Listen to this... 🎵
+                </div>
+
+                <div class="vinyl" id="vinyl1"></div>
+
+                <div class="music-bars" id="musicBars1">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <h2>
+                    This song reminds me of you ❤️
+                </h2>
+
+                <p class="subtitle">
+                    So just close your eyes for a moment
+                    and listen...
+                </p>
+
+                <button class="love-btn" id="song1Button">
+                    ▶ Play My Song
+                </button>
+
+
+                <div class="letter">
+
+                    <div id="letterTyping"></div>
+
+                </div>
+
+
+                <div class="button-row">
+
+                    <button class="love-btn" data-next="3">
+                        Continue ❤️
+                    </button>
+
+                </div>
+
+            </div>
 
         </section>
 
 
+        <!-- =================================
+             SCREEN 3 — FIRST TALK / CALL
+        ================================== -->
 
-        <!-- =================================================
-             SCREEN 2
-             SONG 1 + LETTER
-        ================================================== -->
+        <section class="screen screen3" id="screen3">
 
-        <section class="screen" id="screen2">
+            <div class="envelope-wrapper">
 
-            <div class="progress-bar">
-
-                <span>01</span>
-
-                <div class="progress-line"></div>
-
-                <span>05</span>
-
-            </div>
-
-
-            <div class="top-label">
-                A SONG BEFORE MY WORDS
-            </div>
-
-
-            <h2 class="big-script">
-                Close your eyes
-                for a moment...
-            </h2>
-
-
-            <!-- MUSIC PLAYER -->
-
-            <div class="music-card">
-
-                <div class="vinyl-container">
-
-                    <div class="vinyl"
-                         id="vinyl1">
-
-                        <span>♥</span>
-
-                    </div>
-
+                <div class="small-tag">
+                    One more memory... 💌
                 </div>
 
+                <h2>
+                    Do you remember our beginning?
+                </h2>
 
-                <div class="music-info">
-
-                    <small>
-                        NOW PLAYING
-                    </small>
-
-                    <h3>
-                        My First Little Confession
-                    </h3>
-
-                    <p>
-                        Song 01 • Just for you
-                    </p>
-
-                </div>
-
-
-                <div class="music-bars"
-                     id="musicBars1">
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-                </div>
-
-            </div>
-
-
-            <!-- SONG 1 BUTTON -->
-
-            <button
-                class="music-button"
-                id="song1Button">
-
-                ▶ Play Song 01
-
-            </button>
-
-
-            <!-- LETTER -->
-
-            <div class="love-letter">
-
-                <div class="quote-mark">
-                    “
-                </div>
-
-
-                <p id="letterTyping">
-
-                    <!-- Javascript typing -->
-
+                <p class="subtitle">
+                    Tap the envelope to open it.
                 </p>
 
 
-                <div class="letter-signature">
-                    — from my heart ❤️
-                </div>
+                <!-- Envelope -->
 
-            </div>
-
-
-            <button
-                class="continue-btn"
-                data-next="3">
-
-                I have something to show you
-                <span>→</span>
-
-            </button>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SCREEN 3
-             FIRST CHAT + FIRST CALL
-        ================================================== -->
-
-        <section class="screen" id="screen3">
-
-            <div class="progress-bar">
-
-                <span>02</span>
-
-                <div class="progress-line"></div>
-
-                <span>05</span>
-
-            </div>
-
-
-            <div class="top-label">
-                WHERE OUR STORY QUIETLY BEGAN
-            </div>
-
-
-            <h2 class="section-heading">
-
-                Remember
-
-                <span class="script">
-                    our first talk?
-                </span>
-
-            </h2>
-
-
-            <p class="section-description">
-
-                Every beautiful story has a
-                small beginning...
-
-                <br>
-
-                Maybe ours started
-                with just a simple message.
-
-            </p>
-
-
-
-            <!-- ENVELOPE -->
-
-            <div class="envelope-container"
-                 id="envelopeContainer">
-
-                <div class="envelope">
+                <div id="envelopeContainer" class="envelope">
 
                     <div class="envelope-flap"></div>
 
-
-                    <div class="letter-paper">
-
-                        <small>
-                            OUR FIRST TALK
-                        </small>
-
-
-                        <p>
-                            “Yahan apni
-                            first conversation
-                            ki special line likho...”
-                        </p>
-
-
-                        <span>
-                            ♥
-                        </span>
-
+                    <div class="envelope-heart">
+                        ❤️
                     </div>
 
                 </div>
 
 
-                <button
-                    class="open-letter-btn"
-                    id="openLetter">
-
-                    Open our little memory
-
+                <button class="love-btn" id="openLetter">
+                    Open My Letter 💌
                 </button>
 
-            </div>
 
+                <!-- Memories -->
 
+                <div class="memory-grid" style="margin-top:35px;">
 
-            <!-- FIRST TALK + FIRST CALL -->
+                    <div class="memory-card">
 
-            <div class="memory-cards">
+                        <div class="memory-icon">
+                            💬
+                        </div>
 
+                        <h3>
+                            Our First Talk
+                        </h3>
 
-                <div class="memory-card">
+                        <p>
+                            That first conversation may have
+                            looked simple, but somehow it became
+                            one of my favorite memories.
+                        </p>
 
-                    <div class="memory-icon">
-                        💬
                     </div>
 
-                    <h3>
-                        Our First Talk
-                    </h3>
 
-                    <p>
-                        Add the date,
-                        first message
-                        or your favourite
-                        line here.
-                    </p>
+                    <div class="memory-card">
+
+                        <div class="memory-icon">
+                            📞
+                        </div>
+
+                        <h3>
+                            Our First Call
+                        </h3>
+
+                        <p>
+                            Hearing your voice for the first time
+                            made everything feel a little more real.
+                        </p>
+
+                    </div>
 
                 </div>
 
 
+                <div class="button-row">
 
-                <div class="memory-card">
-
-                    <div class="memory-icon">
-                        ☎️
-                    </div>
-
-                    <h3>
-                        Our First Call
-                    </h3>
-
-                    <p>
-                        One call...
-
-                        <br>
-
-                        So many feelings.
-                    </p>
+                    <button class="love-btn" data-next="4">
+                        Our Memories 📸
+                    </button>
 
                 </div>
 
             </div>
-
-
-
-            <button
-                class="continue-btn"
-                data-next="4">
-
-                Keep our story going
-                <span>→</span>
-
-            </button>
 
         </section>
 
 
+        <!-- =================================
+             SCREEN 4 — 16 PHOTOS
+        ================================== -->
 
-        <!-- =================================================
-             SCREEN 4
-             16 PHOTO MEMORIES
-        ================================================== -->
+        <section class="screen screen4" id="screen4">
 
-        <section class="screen" id="screen4">
+            <div class="gallery-container">
 
-            <div class="progress-bar">
-
-                <span>03</span>
-
-                <div class="progress-line"></div>
-
-                <span>05</span>
-
-            </div>
-
-
-            <div class="top-label">
-                16 LITTLE PIECES OF US
-            </div>
-
-
-            <h2 class="big-script">
-                Our memories...
-            </h2>
-
-
-            <p class="section-description">
-
-                Some moments are too beautiful
-                to leave only in our memories.
-
-                <br>
-
-                So I kept a little space
-                for them here. ❤️
-
-            </p>
-
-
-
-            <!-- =========================================
-                 16 PHOTO FRAMES
-            ========================================== -->
-
-            <div class="photo-grid">
-
-
-                <!-- PHOTO 01 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo01.jpg"
-                        alt="Our Memory 01">
-
-                    <figcaption>
-                        The beginning ❤️
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 02 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo02.jpg"
-                        alt="Our Memory 02">
-
-                    <figcaption>
-                        That first smile
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 03 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo03.jpg"
-                        alt="Our Memory 03">
-
-                    <figcaption>
-                        A little moment
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 04 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo04.jpg"
-                        alt="Our Memory 04">
-
-                    <figcaption>
-                        Just us
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 05 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo05.jpg"
-                        alt="Our Memory 05">
-
-                    <figcaption>
-                        Still remember
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 06 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo06.jpg"
-                        alt="Our Memory 06">
-
-                    <figcaption>
-                        My favourite
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 07 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo07.jpg"
-                        alt="Our Memory 07">
-
-                    <figcaption>
-                        Our little world
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 08 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo08.jpg"
-                        alt="Our Memory 08">
-
-                    <figcaption>
-                        And then...
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 09 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo09.jpg"
-                        alt="Our Memory 09">
-
-                    <figcaption>
-                        Another memory
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 10 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo10.jpg"
-                        alt="Our Memory 10">
-
-                    <figcaption>
-                        That moment
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 11 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo11.jpg"
-                        alt="Our Memory 11">
-
-                    <figcaption>
-                        Forever saved
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 12 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo12.jpg"
-                        alt="Our Memory 12">
-
-                    <figcaption>
-                        You & me
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 13 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo13.jpg"
-                        alt="Our Memory 13">
-
-                    <figcaption>
-                        Little happiness
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 14 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo14.jpg"
-                        alt="Our Memory 14">
-
-                    <figcaption>
-                        One more smile
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 15 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo15.jpg"
-                        alt="Our Memory 15">
-
-                    <figcaption>
-                        Almost forever
-                    </figcaption>
-
-                </figure>
-
-
-
-                <!-- PHOTO 16 -->
-
-                <figure class="photo-frame">
-
-                    <img
-                        src="photos/photo16.jpg"
-                        alt="Our Memory 16">
-
-                    <figcaption>
-                        My favourite person ❤️
-                    </figcaption>
-
-                </figure>
-
-
-            </div>
-
-
-
-            <button
-                class="continue-btn"
-                data-next="5">
-
-                There is one last thing...
-                <span>→</span>
-
-            </button>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SCREEN 5
-             SONG 2 + ACTUAL PROPOSAL
-        ================================================== -->
-
-        <section class="screen" id="screen5">
-
-            <div class="progress-bar">
-
-                <span>04</span>
-
-                <div class="progress-line"></div>
-
-                <span>05</span>
-
-            </div>
-
-
-            <div class="top-label">
-                TAKE YOUR TIME
-            </div>
-
-
-            <h2 class="big-script">
-
-                One more song,
-                from me to you.
-
-            </h2>
-
-
-
-            <!-- SONG 2 CARD -->
-
-            <div class="song-two-card">
-
-                <div class="song-two-disc">
-                    ♫
+                <div class="small-tag">
+                    Our Little Memories ❤️
                 </div>
 
+                <h2>
+                    The Moments I Want To Keep
+                </h2>
 
-                <div>
-
-                    <small>
-                        SONG 02
-                    </small>
-
-                    <h3>
-                        If you're not ready yet...
-                    </h3>
-
-                    <p>
-                        Just listen.
-                        No rush. ❤️
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- SONG 2 BUTTON -->
-
-            <button
-                class="music-button"
-                id="song2Button">
-
-                ♫ Play Song 02
-
-            </button>
-
-
-
-            <!-- PROPOSAL -->
-
-            <div class="proposal-content">
-
-                <p class="script proposal-intro">
-
-                    So, after all these
-                    little moments...
-
+                <p class="gallery-subtitle">
+                    16 little frames for 16 beautiful memories.
                 </p>
 
 
-                <h1 class="proposal-question">
-
-                    Will you be mine?
-
-                </h1>
+                <div class="photo-grid">
 
 
-                <p class="proposal-text">
+                    <div class="photo-frame">
+                        <img src="photos/photo01.jpg"
+                            alt="Our Memory 01">
+                    </div>
 
-                    Not just for today.
+                    <div class="photo-frame">
+                        <img src="photos/photo02.jpg"
+                            alt="Our Memory 02">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo03.jpg"
+                            alt="Our Memory 03">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo04.jpg"
+                            alt="Our Memory 04">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo05.jpg"
+                            alt="Our Memory 05">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo06.jpg"
+                            alt="Our Memory 06">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo07.jpg"
+                            alt="Our Memory 07">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo08.jpg"
+                            alt="Our Memory 08">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo09.jpg"
+                            alt="Our Memory 09">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo10.jpg"
+                            alt="Our Memory 10">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo11.jpg"
+                            alt="Our Memory 11">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo12.jpg"
+                            alt="Our Memory 12">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo13.jpg"
+                            alt="Our Memory 13">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo14.jpg"
+                            alt="Our Memory 14">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo15.jpg"
+                            alt="Our Memory 15">
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="photos/photo16.jpg"
+                            alt="Our Memory 16">
+                    </div>
+
+
+                </div>
+
+
+                <div class="button-row">
+
+                    <button class="love-btn" data-next="5">
+                        There's One Last Thing... 💗
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             SCREEN 5 — SECOND SONG + PROPOSAL
+        ================================== -->
+
+        <section class="screen screen5" id="screen5">
+
+            <div class="glass-card music-card">
+
+                <div class="small-tag">
+                    One last song... 🎶
+                </div>
+
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+
+                <h2>
+                    This one is for us.
+                </h2>
+
+                <p class="subtitle">
+                    Maybe this song can say a few things
+                    that I can't put into words.
+                </p>
+
+
+                <div class="music-bars">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+                <button class="love-btn" id="song2Button">
+                    ▶ Play Our Song
+                </button>
+
+
+                <div class="letter">
+
+                    <p>
+                        I love you without knowing your name.
+                        I love you without seeing you.
+                    </p>
 
                     <br>
 
-                    Not just for a moment.
+                    <p>
+                        And somehow, without even realizing it,
+                        my heart found a place for you.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Every little conversation,
+                        every memory and every moment
+                        became something special to me.
+                    </p>
+
+                </div>
+
+
+                <h2 class="glow">
+                    So...
+                </h2>
+
+                <p class="final-message">
+
+                    I don't want to keep this feeling
+                    inside my heart anymore.
 
                     <br><br>
 
                     <strong>
-                        For all the moments
-                        that come after this.
+                        Will you be mine? ❤️
                     </strong>
 
                 </p>
 
-            </div>
 
+                <div class="button-row">
 
+                    <button class="love-btn" id="finalYes">
+                        Yes, I'm yours ❤️
+                    </button>
 
-            <!-- ANSWERS -->
+                    <button class="love-btn secondary-btn" id="notYet">
+                        Not yet 🙈
+                    </button>
 
-            <div class="answer-area">
-
-
-                <!-- FINAL YES -->
-
-                <button
-                    class="final-yes"
-                    id="finalYes">
-
-                    Yes, I'm yours
-
-                    <span>
-                        ♥
-                    </span>
-
-                </button>
-
-
-                <!-- PLAYFUL NO -->
-
-                <button
-                    class="not-yet"
-                    id="notYet">
-
-                    Not yet 🙈
-
-                </button>
+                </div>
 
             </div>
-
-
-            <p class="tiny-note">
-
-                No pressure.
-
-                <br>
-
-                Just one honest answer
-                from your heart. 🤍
-
-            </p>
 
         </section>
 
 
+        <!-- =================================
+             SCREEN 6 — SHE SAID YES ❤️
+        ================================== -->
 
-        <!-- =================================================
-             SCREEN 6
-             FINAL YES
-        ================================================== -->
+        <section class="screen screen6" id="screen6">
 
-        <section class="screen final-screen"
-                 id="screen6">
+            <div class="final-container">
 
-
-            <div class="final-heart"
-                 id="finalHeart">
-
-                ♥
-
-            </div>
+                <div class="final-heart" id="finalHeart">
+                    ❤️
+                </div>
 
 
-            <div class="top-label">
-                YOU SAID YES...
-            </div>
+                <h1>
+                    You Said Yes! ❤️
+                </h1>
 
 
-            <h1 class="final-title script">
+                <p>
+                    And just like that...
+                </p>
 
-                Then it's you.
+                <p>
+                    You became my favorite
+                    part of this story.
+                </p>
 
                 <br>
 
-                It has always been you.
-
-            </h1>
-
-
-            <div class="final-message">
-
-                <p>
-
-                    From this moment on,
-
-                    <br>
-
-                    every love song will have
-                    a little bit of you in it.
-
+                <p class="glow">
+                    I love you. ❤️
                 </p>
 
-            </div>
+                <br>
 
-
-            <div class="forever-text script">
-
-                You & Me.
-                Always. ❤️
-
-            </div>
-
-
-            <div class="final-small">
-
-                And this is only
-                the beginning...
+                <p>
+                    Today, tomorrow,
+                    and every beautiful day
+                    that comes after.
+                </p>
 
             </div>
 
@@ -973,36 +515,46 @@
     </main>
 
 
-
-    <!-- =====================================================
+    <!-- =================================
          PHOTO LIGHTBOX
-         PHOTO CLICK KARNE PAR BADA HOGA
-    ====================================================== -->
+    ================================== -->
 
-    <div class="photo-lightbox"
-         id="photoLightbox">
+    <div id="photoLightbox">
 
-        <button
-            class="close-lightbox"
-            id="closeLightbox">
-
+        <button id="closeLightbox">
             ×
-
         </button>
 
-
-        <img
-            id="largePhoto"
+        <img id="largePhoto"
             src=""
             alt="Memory">
 
-
-        <p id="largePhotoCaption"></p>
+        <div id="largePhotoCaption"></div>
 
     </div>
 
 
+    <!-- =================================
+         AUDIO
+    ================================== -->
 
-    <!-- =====================================================
-         HEART EXPLOSION CONTAINER
-    ===========
+    <audio id="song1"
+        src="music/song1.mp3"
+        preload="auto">
+    </audio>
+
+    <audio id="song2"
+        src="music/song2.mp3"
+        preload="auto">
+    </audio>
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
