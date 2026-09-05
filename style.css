@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    background: #09000d;
+    color: #fff;
+}
+
+/* =========================
+   MAIN SCREEN SYSTEM
+========================= */
+
+#mainContent {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.screen {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.08);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease,
+        visibility 0.9s;
+    overflow-y: auto;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 10;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 0, 102, .18), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(255, 70, 150, .13), transparent 35%),
+        linear-gradient(135deg, #13000f, #09000d 50%, #18000f);
+    z-index: -3;
+}
+
+.screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, .55));
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+#backgroundHearts,
+#particles,
+#heartExplosion {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#backgroundHearts {
+    z-index: 2;
+}
+
+#particles {
+    z-index: 3;
+}
+
+#heartExplosion {
+    z-index: 999;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -40px;
+    font-size: 20px;
+    opacity: .7;
+    animation: floatHeart linear forwards;
+    filter: drop-shadow(0 0 8px rgba(255, 30, 110, .7));
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(.7);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .8;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(360deg) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass-card {
+    width: min(650px, 95vw);
+    padding: 45px 35px;
+    text-align: center;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(255, 255, 255, .15);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, .45),
+        inset 0 0 30px rgba(255, 255, 255, .025);
+    position: relative;
+    z-index: 5;
+}
+
+.small-tag {
+    color: #ff82ae;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.glass-card h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(35px, 7vw, 65px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #fff, #ff8bb7, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineText 4s linear infinite;
+}
+
+@keyframes shineText {
+    to {
+        background-position: 200%;
+    }
+}
+
+.subtitle {
+    color: #e7dbe2;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.name-highlight {
+    color: #ff76a8;
+    text-shadow: 0 0 15px rgba(255, 70, 130, .7);
+}
+
+/* =========================
+   TYPING
+========================= */
+
+.typing {
+    min-height: 75px;
+    margin: 20px auto;
+    max-width: 600px;
+    color: #fff0f6;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background: #ff6fa5;
+    margin-left: 4px;
+    animation: blink .8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.quote {
+    margin: 20px auto 28px;
+    padding: 15px 20px;
+    border-left: 2px solid #ff5793;
+    color: #d8cbd2;
+    font-style: italic;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.love-btn {
+    position: relative;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    background: linear-gradient(135deg, #ff2675, #b90055);
+    box-shadow:
+        0 10px 30px rgba(255, 0, 100, .3),
+        0 0 20px rgba(255, 0, 100, .12);
+    transition: .3s ease;
+    overflow: hidden;
+}
+
+.love-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: .6s;
+}
+
+.love-btn:hover::before {
+    left: 140%;
+}
+
+.love-btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow:
+        0 15px 40px rgba(255, 0, 100, .4),
+        0 0 35px rgba(255, 0, 100, .2);
+}
+
+.love-btn:active {
+    transform: scale(.95);
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .2);
+    box-shadow: none;
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, .14);
+}
+
+/* =========================
+   SCREEN 2 — MUSIC
+========================= */
+
+.music-card {
+    width: min(700px, 95vw);
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.music-card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 6vw, 52px);
+    margin: 15px 0;
+}
+
+.vinyl {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background:
+        repeating-radial-gradient(
+            circle,
+            #171717 0px,
+            #171717 4px,
+            #292929 5px,
+            #111 8px
+        );
+    border: 8px solid #111;
+    box-shadow:
+        0 0 35px rgba(255, 40, 110, .3),
+        0 0 80px rgba(255, 40, 110, .12);
+    position: relative;
+    animation: vinylSpin 6s linear infinite;
+}
+
+.vinyl::before {
+    content: "♥";
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff397e;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 50, 120, .8);
+}
+
+@keyframes vinylSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.music-bars {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 20px;
+}
+
+.music-bars span {
+    width: 5px;
+    height: 15px;
+    border-radius: 5px;
+    background: #ff5c98;
+    animation: musicBar .8s ease-in-out infinite alternate;
+}
+
+.music-bars span:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.music-bars span:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.music-bars span:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.music-bars span:nth-child(5) {
+    animation-delay: .4s;
+}
+
+@keyframes musicBar {
+    from {
+        height: 8px;
+    }
+
+    to {
+        height: 42px;
+    }
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    margin: 25px auto;
+    padding: 25px;
+    max-width: 620px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid rgba(255, 255, 255, .1);
+    line-height: 1.9;
+    color: #eee1e7;
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-wrapper {
+    text-align: center;
+    width: min(700px, 95vw);
+}
+
+.envelope {
+    width: min(380px, 80vw);
+    height: 230px;
+    margin: 30px auto;
+    position: relative;
+    background: #8c174d;
+    border-radius: 8px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.45);
+    cursor: pointer;
+    transition: transform .5s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-8px);
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #c93472, #74103e);
+    clip-path: polygon(0 0, 50% 52%, 100% 0, 100% 100%, 0 100%);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
